@@ -1,0 +1,7 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.0"}}
+ :aliases
+ {:run  {:jvm-opts ["-Dfile.encoding=UTF-8" "-Dstdout.encoding=UTF-8" "-Dstdin.encoding=UTF-8"]
+         :main-opts ["-m" "consultas.main"]}
+  :test {:extra-paths ["test"]
+         :main-opts ["-e" "(require 'consultas.core-test) (let [r (clojure.test/run-tests 'consultas.core-test)] (System/exit (if (clojure.test/successful? r) 0 1)))"]}}}
